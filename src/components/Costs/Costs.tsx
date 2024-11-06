@@ -1,38 +1,22 @@
 import React from 'react';
-import CostItem from "../CostItem/CostItem";
+import CostItem from "./components/CostItem/CostItem";
 import './Costs.css'
+import Card from "../../UI/Card/Card";
+import {CostsProps} from "../../common/interfaces/CostsProps";
 
-function Costs() {
-
-    const costs = [
-        {
-            date: new Date(2024, 2,12),
-            description: 'Refrigerator',
-            amount: 999.99
-        },
-        {
-            date: new Date(2023, 5,10),
-            description: 'MacBook',
-            amount: 1300
-        },
-        {
-            date: new Date(2024, 2,12),
-            description: 'Jeans',
-            amount: 49.99
-        }
-    ]
+const Costs = ({data}: CostsProps) => {
 
     return (
         <div>
             <h1>Begin to learn React</h1>
-            <div className='costs'>
-                {costs.map((element, idx) => (
+            <Card className='costs'>
+                {data.map((element, idx) => (
                     <CostItem
                         key={idx}
                         item={element}
                     />
                 ))}
-            </div>
+            </Card>
         </div>
     );
 }
