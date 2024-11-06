@@ -6,7 +6,7 @@ interface CostDateProps {
     date: Date
 }
 
-function CostDate({date}: CostDateProps) {
+const CostDate = ({date}: CostDateProps) => {
     return (
         <div className='cost-date'>
             <div className='cost-date__month'>{month(date)}</div>
